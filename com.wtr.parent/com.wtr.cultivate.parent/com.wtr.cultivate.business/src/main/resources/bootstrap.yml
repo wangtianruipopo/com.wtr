@@ -1,0 +1,7 @@
+spring:
+  cloud:
+    config:
+      name: plat_application
+      profile: dev
+      label: master
+      uri: http://localhost:8848

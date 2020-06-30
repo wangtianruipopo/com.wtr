@@ -19,5 +19,4 @@ public class TestService implements TestClient {
 		return params.toString();
 	}
 	
-	
 }
