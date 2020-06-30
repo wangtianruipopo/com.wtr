@@ -5,22 +5,22 @@ spring:
 ---
 spring:
   profiles: dev #开发环境
-  application:
-    name: USER-PROVIDER
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka  #告诉服务提供者要把服务注册到哪儿 #单机环境
   instance:
     prefer-ip-address: true #显示客户端真实ip
+    ip-address: localhost
+    instance-id: ${spring.application.name}:${server.port} #指定实例id
 ---
 spring:
   profiles: test #测试环境
-  application:
-    name: USER-PROVIDER-TEST
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka  #告诉服务提供者要把服务注册到哪儿 #单机环境
   instance:
     prefer-ip-address: true #显示客户端真实ip
+    ip-address: localhost
+    instance-id: ${spring.application.name}:${server.port} #指定实例id
