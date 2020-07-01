@@ -66,5 +66,6 @@
 		<module>com.wtr.common</module>
 		<module>com.wtr.colud.config.server</module>
 		<module>com.wtr.zuul.server</module>
+		<module>com.wtr.auth</module>
 	</modules>
 </project>
