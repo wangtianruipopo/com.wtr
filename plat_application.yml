@@ -5,6 +5,10 @@ spring:
 ---
 spring:
   profiles: dev #开发环境
+  redis:
+    database: 0
+    host: 127.0.0.1
+    port: 6379
 eureka:
   client:
     service-url:
@@ -16,6 +20,10 @@ eureka:
 ---
 spring:
   profiles: test #测试环境
+  redis:
+    database: 0
+    host: 127.0.0.1
+    port: 6379
 eureka:
   client:
     service-url:
