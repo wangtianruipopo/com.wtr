@@ -1,5 +1,6 @@
 server:
   port: 8849
+spring:  application:    name: spring-cloud-zuul-server
 eureka:
   client:
     service-url:
