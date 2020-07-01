@@ -1,4 +1,3 @@
-# com.wtr
 # 启动Redis服务
 在windows环境下启动redis服务，前提是你安装好了，启动如下：
 
