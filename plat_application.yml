@@ -8,7 +8,7 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka  #告诉服务提供者要把服务注册到哪儿 #单机环境
+      defaultZone: http://admin:eurekaServer@localhost:8761/eureka  #告诉服务提供者要把服务注册到哪儿 #单机环境
   instance:
     prefer-ip-address: true #显示客户端真实ip
     ip-address: localhost
@@ -19,7 +19,7 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka  #告诉服务提供者要把服务注册到哪儿 #单机环境
+      defaultZone: http://admin:eurekaServer@localhost:8761/eureka  #告诉服务提供者要把服务注册到哪儿 #单机环境
   instance:
     prefer-ip-address: true #显示客户端真实ip
     ip-address: localhost
