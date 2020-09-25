@@ -32,6 +32,12 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-zuul</artifactId>
 		</dependency>
+		<!-- 本地依赖 -->
+		<dependency>
+			<groupId>com.wtr</groupId>
+			<artifactId>com.wtr.auth</artifactId>
+			<version>${project.version}</version>
+		</dependency>
 	</dependencies>
 
 </project>
