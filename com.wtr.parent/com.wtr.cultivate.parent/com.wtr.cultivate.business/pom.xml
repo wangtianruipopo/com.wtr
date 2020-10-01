@@ -35,5 +35,10 @@
 			<artifactId>com.wtr.cultivate.core</artifactId>
 			<version>${project.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>com.wtr.db</groupId>
+			<artifactId>com.wtr.db.mysql</artifactId>
+			<version>${project.version}</version>
+		</dependency>
 	</dependencies>
 </project>
