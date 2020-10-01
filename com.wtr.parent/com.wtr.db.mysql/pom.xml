@@ -11,8 +11,4 @@
 	<artifactId>com.wtr.db.mysql</artifactId>
 	<name>wtr-database-mysql</name>
 
-	<properties>
-		<failOnMissingWebXml>false</failOnMissingWebXml>
-	</properties>
-
 </project>
