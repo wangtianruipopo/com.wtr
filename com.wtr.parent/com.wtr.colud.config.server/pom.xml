@@ -27,6 +27,12 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-config-server</artifactId>
 		</dependency>
+		<!-- 本地依赖 -->
+		<dependency>
+			<groupId>com.wtr.db</groupId>
+			<artifactId>com.wtr.db.mysql</artifactId>
+			<version>${project.version}</version>
+		</dependency>
 	</dependencies>
 
 </project>
