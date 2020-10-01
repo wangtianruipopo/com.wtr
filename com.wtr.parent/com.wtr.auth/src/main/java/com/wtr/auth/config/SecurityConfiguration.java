@@ -1,59 +1,42 @@
 package com.wtr.auth.config;
 
-import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth2Sso;
-import org.springframework.context.annotation.Bean;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
 @Component
-@EnableOAuth2Sso
+@EnableWebSecurity
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
-	@Bean
-	public PasswordEncoder passwordEncoder() {
-		// ÉèÖÃÄ¬ÈÏµÄ¼ÓÃÜ·½Ê½
-		return new BCryptPasswordEncoder();
-	}
-	
 	/**
-	 * ÈÏÖ¤¹ÜÀíÆ÷£º
-	 * 1¡¢ÈÏÖ¤ĞÅÏ¢Ìá¹©·½Ê½£¨ÓÃ»§Ãû¡¢ÃÜÂë¡¢µ±Ç°ÓÃ»§µÄ×ÊÔ´È¨ÏŞ
-	 * 2¡¢¿É²ÉÓÃÄÚ´æ´æ´¢·½Ê½£¬Ò²¿ÉÄÜ²ÉÓÃÊı¾İ¿â·½Ê½
+	 * è®¤è¯ç®¡ç†å™¨
+	 * 1ã€è®¤è¯ä¿¡æ¯æä¾›æ–¹å¼ï¼ˆç”¨æˆ·åã€å¯†ç ã€å½“å‰ç”¨æˆ·çš„èµ„æºæƒé™
+	 * 2ã€å¯é‡‡ç”¨å†…å­˜å­˜å‚¨æ–¹å¼ï¼Œä¹Ÿå¯èƒ½é‡‡ç”¨æ•°æ®åº“æ–¹å¼
 	 * @param auth
 	 * @throws Exception
 	 */
 	@Override
 	public void configure(AuthenticationManagerBuilder auth) throws Exception {
-		String password = passwordEncoder().encode("321");
-		System.out.println("¼ÓÃÜÖ®ºóµÄÃÜÂë£º " + password);
-		auth.inMemoryAuthentication().withUser("haha")
-			.password(password).authorities("ADMIN");
+		auth
+        .inMemoryAuthentication()
+        .passwordEncoder(new MyPasswordEncoder())
+        .withUser("user")
+        .password("password")
+        .roles("USER");
+
 	}
 	
 	/**
-	 * ×ÊÔ´È¨ÏŞÅäÖÃ
+	 * èµ„æºæƒé™é…ç½®
 	 */
 	@Override
 	public void configure(HttpSecurity http) throws Exception {
 		http.httpBasic()
-			.and().authorizeRequests() // ÈÏÖ¤ÇëÇó
-			.anyRequest().authenticated() // ËùÓĞ½øÈëÓ¦ÓÃµÄHTTPÇëÇó¶¼Òª½øĞĞÈÏÖ¤ 
+			.and().authorizeRequests()
+			.anyRequest().authenticated()
 		;
-//		http.antMatcher("/**")
-//			// ËùÓĞÇëÇó¶¼µÃ¾­¹ıÈÏÖ¤ºÍÊÚÈ¨
-//			.authorizeRequests().anyRequest().authenticated()
-//			.and().authorizeRequests().antMatchers("/", "/anon").permitAll()
-//			.and()
-//			.csrf().disable()
-//			// ÍË³öµÄURL
-//			.logout().logoutUrl("/logout").permitAll()
-//			// ÍË³ö³É¹¦ºó·µ»ØµÇÂ¼½çÃæ
-//			.logoutSuccessUrl("/login")
-//		;
 	}
 	
 }
