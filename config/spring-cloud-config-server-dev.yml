@@ -16,7 +16,7 @@ spring:
       test-while-idle: true
       test-on-borrow: false
       test-on-return: false
-      filters:stat,wall,log4j
+      filters: stat,wall,log4j
     mybatis-plus:
       mapper-locations: classpath*:mapper/**/*Mapper.xml
       #实体扫描，多个package用逗号或者分号分隔
