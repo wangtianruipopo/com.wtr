@@ -18,7 +18,7 @@ import org.springframework.transaction.PlatformTransactionManager;
 import com.alibaba.druid.pool.DruidDataSource;
 
 @Configuration
-@MapperScan(basePackages = {"com.wtr.db.mysql.test.po"},
+@MapperScan(basePackages = {"com.wtr.*"},
 	sqlSessionFactoryRef = "sqlSessionFactoryHosDataSource")
 public class MybatisHosConfig {
 	
@@ -41,6 +41,8 @@ public class MybatisHosConfig {
 		return dataSource;
 	}
 	
+	@Primary
+	@Bean(name = "sqlSessionFactoryDataSource1")
 	public SqlSessionFactory sqlSessionFactoryHosDataSource(@Qualifier("hosDataSource")DataSource datasource1) throws Exception {
 		SqlSessionFactoryBean factoryBean = new SqlSessionFactoryBean();
 		org.apache.ibatis.session.Configuration configuration = new org.apache.ibatis.session.Configuration();

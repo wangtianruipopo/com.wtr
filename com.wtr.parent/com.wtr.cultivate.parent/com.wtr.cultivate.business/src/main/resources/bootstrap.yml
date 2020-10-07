@@ -1,7 +1,24 @@
 spring:
+  profiles:
+    active: dev
+---
+spring:
+  profiles: dev
+  application:
+    name: cultivateBusiness
   cloud:
     config:
-      name: plat_application
-      profile: dev
+      name: database,eureka
+      uri: http://localhost:8888
       label: master
-      uri: http://localhost:8848
+      profile: dev
+---
+spring:
+  profiles: test
+  application:
+    name: cultivateBusiness
+  cloud:
+    config:
+      uri: http://localhost:8888
+      label: master
+      profile: test

@@ -5,9 +5,9 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.wtr.cultivate.business.po.Test;
+import com.wtr.cultivate.business.po.TestMapper;
 import com.wtr.cultivate.core.client.TestClient;
-import com.wtr.db.mysql.test.po.Test;
-import com.wtr.db.mysql.test.po.TestMapper;
 
 @RestController
 public class TestService implements TestClient {

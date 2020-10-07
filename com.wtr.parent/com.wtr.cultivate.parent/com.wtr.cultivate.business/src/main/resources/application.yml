@@ -1,5 +1,2 @@
-spring:
-  application:
-    name: cultivateBusiness
 server:
   port: 10001
