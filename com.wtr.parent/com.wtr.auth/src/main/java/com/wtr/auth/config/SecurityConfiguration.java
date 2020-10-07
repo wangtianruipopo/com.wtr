@@ -1,15 +1,20 @@
 package com.wtr.auth.config;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Component;
 
 @Component
 @EnableWebSecurity
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
+	@Autowired
+	private UserDetailsService customUserDetailsService;
+	
 	/**
 	 * 认证管理器
 	 * 1、认证信息提供方式（用户名、密码、当前用户的资源权限
@@ -19,13 +24,13 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	 */
 	@Override
 	public void configure(AuthenticationManagerBuilder auth) throws Exception {
-		auth
-        .inMemoryAuthentication()
-        .passwordEncoder(new MyPasswordEncoder())
-        .withUser("user")
-        .password("password")
-        .roles("USER");
-
+//		auth
+//        .inMemoryAuthentication()
+//        .passwordEncoder(new MyPasswordEncoder())
+//        .withUser("user")
+//        .password("password")
+//        .roles("USER");
+		auth.userDetailsService(customUserDetailsService);
 	}
 	
 	/**
