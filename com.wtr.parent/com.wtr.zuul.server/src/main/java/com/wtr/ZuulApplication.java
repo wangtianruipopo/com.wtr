@@ -1,4 +1,4 @@
-package com.wtr.zuul.server;
+package com.wtr;
 
 import java.security.Principal;
 
