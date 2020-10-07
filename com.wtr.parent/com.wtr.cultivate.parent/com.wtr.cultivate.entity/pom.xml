@@ -4,27 +4,29 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>com.wtr</groupId>
-		<artifactId>com.wtr.parent</artifactId>
+		<artifactId>com.wtr.cultivate.parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>com.wtr.common</artifactId>
-	<name>com.wtr.common</name>
+	<artifactId>com.wtr.cultivate.entity</artifactId>
+	<packaging>war</packaging>
+	<name>cultive-entity</name>
 
 	<dependencies>
-		<dependency>
-			<groupId>com.alibaba</groupId>
-			<artifactId>fastjson</artifactId>
-		</dependency>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<scope>provided</scope>
 		</dependency>
-		<!-- 实现对 MyBatis 的自动化配置 -->
+		<!-- 本地依赖 -->
 		<dependency>
-			<groupId>com.baomidou</groupId>
-			<artifactId>mybatis-plus-boot-starter</artifactId>
-			<version>${mybatis-plus.version}</version>
+			<groupId>com.wtr</groupId>
+			<artifactId>com.wtr.common</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.wtr</groupId>
+			<artifactId>com.wtr.jdbctemplate</artifactId>
+			<version>${project.version}</version>
 		</dependency>
 	</dependencies>
 

@@ -12,5 +12,6 @@
   	<module>com.wtr.cultivate.web</module>
   	<module>com.wtr.cultivate.core</module>
   	<module>com.wtr.cultivate.business</module>
+  	<module>com.wtr.cultivate.entity</module>
   </modules>
 </project>

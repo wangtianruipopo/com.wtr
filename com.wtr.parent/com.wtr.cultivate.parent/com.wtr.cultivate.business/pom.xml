@@ -41,8 +41,8 @@
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>com.wtr.db</groupId>
-			<artifactId>com.wtr.db.mysql</artifactId>
+			<groupId>com.wtr</groupId>
+			<artifactId>com.wtr.cultivate.entity</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 	</dependencies>

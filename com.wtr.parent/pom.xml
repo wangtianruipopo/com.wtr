@@ -11,12 +11,14 @@
 	<properties>
 		<java.version>14</java.version>
 		<project.version>0.0.1-SNAPSHOT</project.version>
-		<spring-boot.version>2.3.1.RELEASE</spring-boot.version>
-		<spring-cloud.version>Hoxton.SR5</spring-cloud.version>
+		<spring-boot.version>2.3.4.RELEASE</spring-boot.version>
+		<spring-cloud.version>Hoxton.SR6</spring-cloud.version>
 		<fastjson.version>1.2.71</fastjson.version>
 		<mysql.version>8.0.21</mysql.version>
 		<druid.version>1.1.24</druid.version>
 		<mybatis-plus.version>3.4.0</mybatis-plus.version>
+		<dynamic-datasource.version>3.2.1</dynamic-datasource.version>
+		<druid.version>1.2.1</druid.version>
 		<lombok.version>1.18.12</lombok.version>
 		<maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
 	</properties>
@@ -98,6 +100,6 @@
 		<module>com.wtr.colud.config.server</module>
 		<module>com.wtr.zuul.server</module>
 		<module>com.wtr.auth</module>
-		<module>com.wtr.db.mysql</module>
+		<module>com.wtr.jdbctemplate</module>
 	</modules>
 </project>

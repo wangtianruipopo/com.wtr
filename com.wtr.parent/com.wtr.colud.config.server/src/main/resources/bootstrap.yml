@@ -15,4 +15,5 @@ spring:
           username: wangtianruipopo
           password: 964500wang
           default-label: master
-          search-paths: config
+          search-paths: 
+            - config
