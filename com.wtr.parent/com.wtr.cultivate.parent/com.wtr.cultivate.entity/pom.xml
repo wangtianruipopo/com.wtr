@@ -23,11 +23,6 @@
 		<!-- 本地依赖 -->
 		<dependency>
 			<groupId>com.wtr</groupId>
-			<artifactId>com.wtr.common</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.wtr</groupId>
 			<artifactId>com.wtr.jdbctemplate</artifactId>
 			<version>${project.version}</version>
 		</dependency>

@@ -1,0 +1,24 @@
+spring:
+  profiles:
+    active: dev
+---
+spring:
+  profiles: dev
+  application:
+    name: spring-cloud-zuul-server
+  cloud:
+    config:
+      name: database,eureka
+      uri: http://localhost:8888
+      label: master
+      profile: dev
+---
+spring:
+  profiles: test
+  application:
+    name: spring-cloud-zuul-server
+  cloud:
+    config:
+      uri: http://localhost:8888
+      label: master
+      profile: test
