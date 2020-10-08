@@ -5,10 +5,10 @@ spring:
 spring:
   profiles: dev
   application:
-    name: cultivateWeb
+    name: spring-cloud-zuul-server
   cloud:
     config:
-      name: ${spring.application.name},eureka
+      name: database,eureka
       uri: http://localhost:8888
       label: master
       profile: dev
@@ -16,7 +16,7 @@ spring:
 spring:
   profiles: test
   application:
-    name: cultivateBusiness
+    name: spring-cloud-zuul-server
   cloud:
     config:
       uri: http://localhost:8888

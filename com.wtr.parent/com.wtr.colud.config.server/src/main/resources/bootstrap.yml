@@ -1,0 +1,19 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://admin:eurekaServer@localhost:8761/eureka
+  instance:
+    prefer-ip-address: true
+spring:
+  application:
+    name: spring-cloud-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/wangtianruipopo/com.wtr
+          username: wangtianruipopo
+          password: 964500wang
+          default-label: master
+          search-paths: 
+            - config

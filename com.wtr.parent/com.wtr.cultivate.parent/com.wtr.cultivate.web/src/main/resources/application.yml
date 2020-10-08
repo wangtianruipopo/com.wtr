@@ -1,5 +1,2 @@
-spring:
-  application:
-    name: cultivateWeb
 server:
   port: 9999

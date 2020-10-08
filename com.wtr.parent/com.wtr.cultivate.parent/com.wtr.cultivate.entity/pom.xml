@@ -4,21 +4,27 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>com.wtr</groupId>
-		<artifactId>com.wtr.parent</artifactId>
+		<artifactId>com.wtr.cultivate.parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>com.wtr.common</artifactId>
-	<name>com.wtr.common</name>
+	<artifactId>com.wtr.cultivate.entity</artifactId>
+	<name>cultive-entity</name>
+
+	<properties>
+		<failOnMissingWebXml>false</failOnMissingWebXml>
+	</properties>
 
 	<dependencies>
-		<dependency>
-			<groupId>com.alibaba</groupId>
-			<artifactId>fastjson</artifactId>
-		</dependency>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<scope>provided</scope>
+		</dependency>
+		<!-- 本地依赖 -->
+		<dependency>
+			<groupId>com.wtr</groupId>
+			<artifactId>com.wtr.jdbctemplate</artifactId>
+			<version>${project.version}</version>
 		</dependency>
 	</dependencies>
 

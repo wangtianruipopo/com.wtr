@@ -29,6 +29,11 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-config</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<scope>provided</scope>
+		</dependency>
 		<!-- 本地依赖 -->
 		<dependency>
 			<groupId>com.wtr.cultivate</groupId>
@@ -36,8 +41,8 @@
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>com.wtr.db</groupId>
-			<artifactId>com.wtr.db.mysql</artifactId>
+			<groupId>com.wtr</groupId>
+			<artifactId>com.wtr.cultivate.entity</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 	</dependencies>
